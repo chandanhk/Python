@@ -1,0 +1,14 @@
+We use ''' ….. Comment …. ''' for writing multi-line comments in python (Use lines enclosed with tripe quotes for writing multi-line comments). An example of multi-line comment is shown below:
+'''This is a comment
+Author: chandan
+Date: 27 November 2020
+Multi-line comment ends here
+'''
+
+##end: end command allows us to put something at the end of the line after it is printed. In simple words it allows us to continue the line with " " or ',' or anything we put inside these quotes of the end.
+print("Chandan is a programmer", end="**")
+
+###Escape Sequences :
+An Escape Sequence character in Python is a sequence of characters that represents a single character.
+It doesn’t represent itself when used inside string literal or character.
+It is composed of two or more characters starting with backslash \ but acts as a single character. Example \n depicts a new line characte
