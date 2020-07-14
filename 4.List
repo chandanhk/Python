@@ -1,0 +1,112 @@
+#Lists are just like dynamic sized arrays, declared in other languages (vector in C++ and ArrayList in Java). 
+3Python lists are containers used to store a list of values of any data type. In simple words, we can say that a list is a collection of any data type items or elements. 
+#E.g.
+#list1 = ['chandan', 'ram', 'Aakash', 'shyam', 5, 4.85]
+
+
+#Accessing Values in Lists
+list1 = ['physics', 'chemistry', 1997, 2000]
+list2 = [1, 2, 3, 4, 5, 6, 7 ]
+
+print ("list1[0]: ", list1[0])
+print ("list2[1:5]: ", list2[1:5])
+
+When the above code is executed, it produces the following result −
+
+list1[0]:  physics
+list2[1:5]:  [2, 3, 4, 5]
+
+Updating Lists
+list = ['physics', 'chemistry', 1997, 2000]
+print ("Value available at index 2 : ", list[2])
+list[2] = 2001
+print ("New value available at index 2 : ", list[2])
+
+Delete List Elements
+list = ['physics', 'chemistry', 1997, 2000]
+print (list)
+del list[2]
+print ("After deleting value at index 2 : ", list)
+
+Basic List Operations
+
+Python Expression	                        Results	                        Description
+_______________________________________________________________________________________
+len([1, 2, 3])    	                      3	                              Length
+[1, 2, 3] + [4, 5, 6]	                    [1, 2, 3, 4, 5, 6]	            Concatenation
+['Hi!'] * 4	                              ['Hi!', 'Hi!', 'Hi!', 'Hi!']	  Repetition
+3 in [1, 2, 3]	                          True	                          Membership
+for x in [1,2,3] : print (x,end = ' ')	  1 2 3	                          Iteration
+_______________________________________________________________________________________
+
+
+Indexing, Slicing and Matrixes
+
+L = ['C++'', 'Java', 'Python']
+
+Expression	 Results	            Description
+_______________________________________________________________________________________
+L[2]  	    'Python'	          Offsets start at zero
+L[-2] 	    'Java'	            Negative: count from the right
+L[1:] 	    ['Java', 'Python']	Slicing fetches sections
+_______________________________________________________________________________________
+
+
+Built-in List Functions and Methods
+Sr.No.	  Function            Description
+--------------------------------------------------------------------------------------------------
+1         len(list)           Gives the total length of the list.
+2       	max(list            Returns item from the list with max value.
+3       	min(list)           Returns item from the list with min value.
+4         list(seq)           Converts a tuple into list.
+
+Python includes the following list methods −
+
+Sr.No.	    Methods &                       Description
+---------------------------------------------------------------------------------------------------
+1	        list.append(obj)              Appends object obj to list
+
+2	        list.count(obj)               Returns count of how many times obj occurs in list
+
+3	        list.extend(seq)              Appends the contents of seq to list
+
+4	        list.index(obj)               Returns the lowest index in list that obj appears
+
+5	        list.insert(index, obj)       Inserts object obj into list at offset index
+
+6	        list.pop(obj = list[-1])      Removes and returns last object or obj from list
+
+7	        list.remove(obj)              Removes object obj from list
+
+8	        list.reverse()                Reverses objects of list in place
+
+9	        list.sort([func])             Sorts objects of list, use compare func if given
+
+-------------------------------------MY PROGRAM-----------------------------------------------
+
+listt=[1,2,3,6,7,4,5,8,9,10]
+#listt.sort()
+#listt.reverse()
+#print(len(listt))
+#print(min(listt))
+#print(max(listt))
+#print(listt)
+#listt.remove(5)
+#print(listt)
+#listt.insert(6,56)   (6,56)means add 56 after 6
+#print(listt)
+#listt.append(11)
+#print(listt)
+listt.pop()
+listt.pop()
+
+print(listt)
+
+###find the number is present or not###
+fi=int(input("Enter the number which do you want to find-- "))
+
+if fi in listt:
+    print("Congrats ITs is in listt")
+else:
+    print("sorry it is not in list")
+
