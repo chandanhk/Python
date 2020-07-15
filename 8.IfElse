@@ -1,0 +1,80 @@
+# var1 = 6
+# var2 = 56
+# var3 = int(input())
+# if var3>var2:
+#     print("Greater")
+# elif var3==var2:
+#     print("Equal")
+# else:
+#     print("Lesser")
+
+# list1 = [5, 7, 3]
+# print(15 not in list1)
+# if 15 not in list1:
+#     print("No its not in the list")
+
+# Quiz
+print("What is your age?")
+age = int(input())
+if age<18:
+    print("You cannot drive")
+
+elif age==18:
+    print("We will think about you")
+
+else:
+    print("You can drive")
+    
++++++++++___________________________________________
+list1=[5,7,3]
+print(5 in list1)
+if 5 in list1:
+    print("yes it is in list")
+
+
+
+listt2=[5,45,4,5,45,454]
+listt2.append(55)
+listt2.insert(45,46)
+if 56 in listt2:
+    print("yes it is in list2")
+else:
+    print("it is not present in lsit2")
+
+_______________________________________________________________________________
+Single Statement Suites
+
+var = 100
+if ( var == 100 ) : print "Value of expression is 100"
+print "Good bye!"
+
+******************************************************
+#if-elif-else ladder
+
+if (condition):
+    statement
+elif (condition):
+    statement
+.
+.
+else:
+    statement
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+****IF NOT ****
+
+# Initial animal values.
+animal1 = "bird"
+animal2 = "bird"
+
+# Compare two strings.
+if animal1 == animal2:
+    print(1)
+
+# Change our animals.
+animal1 = "lizard"
+animal2 = "fish"
+
+# We can use "not" in front of an equals expression.
+if not animal1 == animal2:
+    print(2)
