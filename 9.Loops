@@ -1,0 +1,176 @@
+$$$$$FOR LOOPS$$$$$$$$
+
+Syntax
+for var in iterable:
+    # statements
+______________________________________________________________________
+# Python program to illustrate 
+# Iterating over a list 
+print("List Iteration") 
+l = ["geeks", "for", "geeks"] 
+for i in l: 
+	print(i) 
+		
+# Iterating over a tuple (immutable) 
+print("\nTuple Iteration") 
+t = ("geeks", "for", "geeks") 
+for i in t: 
+	print(i) 
+		
+# Iterating over a String 
+print("\nString Iteration")	 
+s = "Geeks"
+for i in s : 
+	print(i) 
+		
+# Iterating over dictionary 
+print("\nDictionary Iteration")	 
+d = dict() 
+d['xyz'] = 123
+d['abc'] = 345
+for i in d : 
+	print("% s % d" %(i, d[i])) 
++++++++++++++++++++++++++++++++++++++++++result
+List Iteration
+geeks
+for
+geeks
+
+Tuple Iteration
+geeks
+for
+geeks
+
+String Iteration
+G
+e
+e
+k
+s
+
+Dictionary Iteration
+xyz 123
+abc 345
+------------------------------------------------------------------------------
+
+EXAMPLE
+____________________________________________________1
+for letter in 'Python':     # First Example
+   print 'Current Letter :', letter
+
+fruits = ['banana', 'apple',  'mango']
+for fruit in fruits:        # Second Example
+   print 'Current fruit :', fruit
+
+print "Good bye!"
+-------------------------------------------OUTPUT
+When the above code is executed, it produces the following result −
+
+Current Letter : P
+Current Letter : y
+Current Letter : t
+Current Letter : h
+Current Letter : o
+Current Letter : n
+Current fruit : banana
+Current fruit : apple
+Current fruit : mango
+Good bye!
+-----------------------------------------------------------------2
+fruits = ['banana', 'apple',  'mango']
+for index in range(len(fruits)):
+   print 'Current fruit :', fruits[index]
+
+print "Good bye!"
+------------------------------------------------------------------OUTPUT
+Current fruit : banana
+Current fruit : apple
+Current fruit : mango
+Good bye!
+---------------------------------------------------------------------------3
+for num in range(10,20):     #to iterate between 10 to 20
+   for i in range(2,num):    #to iterate on the factors of the number
+      if num%i == 0:         #to determine the first factor
+         j=num/i             #to calculate the second factor
+         print '%d equals %d * %d' % (num,i,j)
+         break #to move to the next number, the #first FOR
+   else:                  # else part of the loop
+      print num, 'is a prime number'
+		break
+ ==================================OUTPUT10 equals 2 * 5
+11 is a prime number
+12 equals 2 * 6
+13 is a prime number
+14 equals 2 * 7
+15 equals 3 * 5
+16 equals 2 * 8
+17 is a prime number
+18 equals 2 * 9
+19 is a prime number
+________________________________________
+for-else loop
+
+# Python program to demonstrate 
+# for-else loop 
+
+for i in range(1, 4): 
+	print(i) 
+else: # Executed because no break in for 
+	print("No Break\n") 
+
+for i in range(1, 4): 
+	print(i) 
+	break
+else: # Not executed as there is a break 
+	print("No Break") 
+
+------output
+1
+2
+3
+No Break
+
+1
+))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+# list1 = [ ["Harry", 1], ["Larry", 2],
+#           ["Carry", 6], ["Marie", 250]]
+# dict1 = dict(list1)
+#
+# for item in dict1:
+#     print(item)
+# for item, lollypop in dict1.items():
+#     print(item, "and lolly is ", lollypop)
+items = [int, float, "HaERRY", 5,3, 3, 22, 21, 64, 23, 233, 23, 6]
+
+for item in items:
+    if str(item).isnumeric() and item>=6:
+        print(item)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+=============================WHILE==================================
+Using else Statement with While Loop                 
+
+count = 0
+while count < 5:
+   print count, " is  less than 5"
+   count = count + 1
+else:
+   print count, " is not less than 5" 
+   
+When the above code is executed, it produces the following result −
+
+0 is less than 5
+1 is less than 5
+2 is less than 5
+3 is less than 5
+4 is less than 5
+5 is not less than 5
+--------------------------------------------
+Single Statement Suites
+
+flag = 1
+while (flag): print 'Given flag is really true!'
+print "Good bye!"
+
