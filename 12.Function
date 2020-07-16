@@ -1,0 +1,49 @@
+Functions in Python
+# A simple Python function to check 
+# whether x is even or odd 
+def evenOdd( x ): 
+    if (x % 2 == 0): 
+        print "even"
+    else: 
+        print "odd"
+  
+# Driver code 
+evenOdd(2) 
+evenOdd(3) 
+
+
+------------------------Pass by Reference or pass by value?-----------------------------
+# Here x is a new reference to same list lst 
+def myFun(x): 
+   x[0] = 20
+  
+# Driver Code (Note that lst is modified 
+# after function call. 
+lst = [10, 11, 12, 13, 14, 15]  
+myFun(lst); 
+print(lst)
+
+Output:
+[20, 11, 12, 13, 14, 15]
+
+
+_________________________Default Arguments-----------------------------------------------------------------
+Default arguments:
+A default argument is a parameter that assumes a default value if a value is not provided in the function call for that argument.The following example illustrates Default arguments.
+
+# Python program to demonstrate 
+# default arguments 
+def myFun(x, y=50): 
+    print("x: ", x) 
+    print("y: ", y) 
+  
+# Driver code (We call myFun() with only 
+# argument) 
+myFun(10) 
+Output:
+('x: ', 10)
+('y: ', 50)
+
+
+
+
