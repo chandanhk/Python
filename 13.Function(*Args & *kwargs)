@@ -1,0 +1,138 @@
+-----------------------------------------*Args------------------------------------------------
+Example for usage of *arg:
+# Python program to illustrate   
+# *args for variable number of arguments 
+def myFun(*argv):  
+    for arg in argv:  
+        print (arg) 
+    
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks')  
+Output:
+Hello
+Welcome
+to
+GeeksforGeeks
+# Python program to illustrate  
+# *args with first extra argument 
+def myFun(arg1, *argv): 
+    print ("First argument :", arg1) 
+    for arg in argv: 
+        print("Next argument through *argv :", arg) 
+  
+myFun('Hello', 'Welcome', 'to', 'GeeksforGeeks') 
+Output:
+First argument : Hello
+Next argument through *argv : Welcome
+Next argument through *argv : to
+Next argument through *argv : GeeksforGeeks
+
+----------------------mycode
+#def funname(a,b,c,d):
+#    print(a,b,c,d)
+#funname("chk","pk","mk","tk")
+
+def funname(*args):
+   print(args[0])
+lists=["chk","pk","mk","tk"]
+lists.append(96)
+#funname(lists)
+funname(*lists)
+"""
+def funname(nor,*args):
+   print(args[0])
+   print(nor)
+lists=["chk","pk","mk","tk"]
+nor=["i am a rider provider"]
+funname(nor,*lists)
+"""
+------------
+# def function_name_print(a, b, c, d, e):
+#     print(a, b, c, d, e)
+
+def funargs(normal, *argsrohan, **kwargsbala):
+    print(normal)
+    for item in argsrohan:
+        print(item)
+    print("\nNow I would Like to introduce some of our heroes")
+    for key, value in kwargsbala.items():
+        print(f"{key} is a {value}")
+
+
+# function_name_print("Harry", "Rohan", "Skillf", "Hammad", "Shivam")
+
+har = ["Harry", "Rohan", "Skillf", "Hammad",
+       "Shivam", "The programmer"]
+normal = "I am a normal Argument and the students are:"
+kw = {"Rohan":"Monitor", "Harry":"Fitness Instructor",
+      "The Programmer": "Coordinator", "Shivam":"Cook"}
+funargs(normal, *har, **kw)
+
+----------------------------------------
+
+
+-----------------------------------------------------------------*kwargs--------------------------------------
+Example for usage of **kwargs:
+# Python program to illustrate   
+# *kargs for variable number of keyword arguments 
+  
+def myFun(**kwargs):  
+    for key, value in kwargs.items(): 
+        print ("%s == %s" %(key, value)) 
+  
+# Driver code 
+myFun(first ='Geeks', mid ='for', last='Geeks')     
+Output:
+last == Geeks
+mid == for
+first == Geeks
+# Python program to illustrate  **kargs for  
+# variable number of keyword arguments with 
+# one extra argument. 
+  
+def myFun(arg1, **kwargs):  
+    for key, value in kwargs.items(): 
+        print ("%s == %s" %(key, value)) 
+  
+# Driver code 
+myFun("Hi", first ='Geeks', mid ='for', last='Geeks')     
+Output:
+last == Geeks
+mid == for
+first == Geeks
+-----------------------------------Using *args and **kwargs to call a function----------------------------------------------------------------
+
+Examples:
+
+def myFun(arg1, arg2, arg3): 
+    print("arg1:", arg1) 
+    print("arg2:", arg2) 
+    print("arg3:", arg3) 
+      
+# Now we can use *args or **kwargs to 
+# pass arguments to this function :  
+args = ("Geeks", "for", "Geeks") 
+myFun(*args) 
+  
+kwargs = {"arg1" : "Geeks", "arg2" : "for", "arg3" : "Geeks"} 
+myFun(**kwargs) 
+Output:
+arg1: Geeks
+arg2: for
+arg3: Geeks
+arg1: Geeks
+arg2: for
+arg3: Geeks
+--------------------------------------Using *args and **kwargs in same line to call a function--------------------------------------
+
+Examples:
+
+def myFun(*args,**kwargs): 
+    print("args: ", args) 
+    print("kwargs: ", kwargs) 
+  
+  
+# Now we can use both *args ,**kwargs to pass arguments to this function : 
+myFun('geeks','for','geeks',first="Geeks",mid="for",last="Geeks") 
+Output:
+args: ('geeks', 'for', 'geeks')
+kwargs {'first': 'Geeks', 'mid': 'for', 'last': 'Geeks'}
