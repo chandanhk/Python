@@ -1,0 +1,175 @@
+Python Try Except
+try() is used in Error and Exception Handling
+There are two kinds of errors :
+
+Syntax Error : Also known as Parsing Errors, most basic. Arise when the Python parser is unable to understand a line of code.
+Exception : Errors which are detected during execution. eg – ZeroDivisionError.
+List of Exception Errors :
+
+IOError : if file can’t be opened
+KeyboardInterrupt : when an unrequired key is pressed by the user
+ValueError : when built-in function receives a wrong argument
+EOFError : if End-Of-File is hit without reading any data
+ImportError : if it is unable to find the module
+----
+Basic Syntax : 
+ try:
+    // Code
+ except:
+    // Code
+    
+----------------try-except-else--------------------------
+We can also use the else statement with the try-except statement in which, we can place the code which will be executed in the scenario if no exception occurs in the try block.
+
+The syntax to use the else statement with the try-except statement is given below.
+
+try:    
+    #block of code     //run this code
+    
+except Exception1:    
+    #block of code     //run this code if an exception occurs
+    
+else:    
+    #this code executes if no except block is executed   //run this code if no exceptions occurs
+
+
+
+
+-----------------------The except statement using with exception variable------------------------
+We can use the exception variable with the except statement. It is used by using the as keyword. this object will return the cause of the exception. Consider the following example:
+
+try:    
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    c = a/b  
+    print("a/b = %d"%c)    
+    # Using exception object with the except statement  
+except Exception as e:    
+    print("can't divide by zero")    
+    print(e)  
+else:    
+    print("Hi I am else block")    
+    
+    
+-------------------------------------------------------------------
+try:    
+    #this will throw an exception if the file doesn't exist.     
+    fileptr = open("file.txt","r")    
+except IOError:    
+    print("File not found")    
+else:    
+    print("The file opened successfully")    
+    fileptr.close()    
+    
+    
+-----------------------------The try...finally block------------------------------------    
+try:    //run this code
+    fileptr = open("file2.txt","r")      
+    try:    //
+        fileptr.write("Hi I am good")    
+    finally:  //always run this code  
+        fileptr.close()    
+        print("file closed")    
+except:    //run this code exception occurs
+    print("Error")    
+ ------------------------------my code------
+ num1=input("enter the first element --")
+num2=input("enter the 2nd element --")
+try:
+    print("the sum of two number is ",int(num1)+int(num2))
+except Exception as e:
+    print(e)
+
+print("this is very important")
+
+
+
+try:
+    wrong=num1+7785544612112243;[];+num2  
+except Exception as e:
+    print(e)
+print("because of this line is very importanrt so we use try and except")
+    
+    
+    
+    
+    -----------------------------Raising exceptions--------------------------
+    
+    Syntax
+
+raise Exception_class,<value>    
+Points to remember
+
+To raise an exception, the raise statement is used. The exception class name follows it.
+An exception can be provided with a value that can be given in the parenthesis.
+To access the value "as" keyword is used. "e" is used as a reference variable which stores the value of the exception.
+We can pass the value to an exception to specify the exception type.
+Example
+
+try:    
+    age = int(input("Enter the age:"))    
+    if(age<18):    
+        raise ValueError   
+    else:    
+        print("the age is valid")    
+except ValueError:    
+    print("The age is not valid")    
+Output:
+
+Enter the age:17
+The age is not valid
+Example 2 Raise the exception with message
+
+try:  
+     num = int(input("Enter a positive integer: "))  
+     if(num <= 0):  
+# we can pass the message in the raise statement  
+         raise ValueError("That is  a negative number!")  
+except ValueError as e:  
+     print(e)  
+Output:
+
+Enter a positive integer: -5
+That is a negative number!
+Example 3
+
+try:    
+    a = int(input("Enter a:"))    
+    b = int(input("Enter b:"))    
+    if b is 0:    
+        raise ArithmeticError  
+    else:    
+        print("a/b = ",a/b)    
+except ArithmeticError:    
+    print("The value of b can't be 0")  
+Output:
+
+Enter a:10
+Enter b:0
+The value of b can't be 0
+
+________________my code--------------------------
+"""a=input("enter your name: ")
+b=int(input("How much do you earn "))
+if b==0:
+    raise Exception("program is stopping bcz enter value is zero(0)")
+if a.isnumeric():
+    raise Exception("Numbers are not allowed")
+print(f"hello {a}")
+
+c=input("Enter your name ")
+try:
+    print(a)
+except Exception as e:
+    if c=="chandan":
+        raise ValueError("chandan is noty allowed here")
+    print("Exceptions handler")
+    """
+a=input("enter ")
+try:
+    print(c)
+except Exception as f:
+    raise NameError("Varible is not found")
+
+if a=="12":
+     raise
