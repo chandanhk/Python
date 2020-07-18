@@ -1,0 +1,159 @@
+print("i am a hacker")
+f=open("cck.txt","r")
+content=f.readlines()
+print(content)
+f=open("cck.txt","a")
+f.write(" i am a rider provider bring the heat girl,i will bring the fire")
+f=open("cck.txt","r")
+content2=f.readline()
+print("after modification",content2)
+f.close()
+
+
+
+f=open("hkchandan.txt","x")
+f=open("hkchandan.txt","a")
+f.write("heloo.. my name is chandan kumar chauhan ,i am basiclly from bihar,,i passed class 10th from chittarajan kastyurba gandhi vidylya,,i passed out class 12th from rk+2 high scholl..now i am currntly doing diploma,,my hobbies i internating ,,,,my patioent is hacking and cracking")
+f=open("hkchandan.txt","r")
+content=f.readlines()
+print(content)
+
+#print(f.tell())
+#print(f.seek(0))
+f.close()
+
+
+Syntax
+file object = open(file_name [, access_mode][, buffering])
+
+SN	Access mode	Description
+1	r	It opens the file to read-only mode. The file pointer exists at the beginning. The file is by default open in this mode if no access mode is passed.
+2	rb	It opens the file to read-only in binary format. The file pointer exists at the beginning of the file.
+3	r+	It opens the file to read and write both. The file pointer exists at the beginning of the file.
+4	rb+	It opens the file to read and write both in binary format. The file pointer exists at the beginning of the file.
+5	w	It opens the file to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name. The file pointer exists at the beginning of the file.
+6	wb	It opens the file to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists. The file pointer exists at the beginning of the file.
+7	w+	It opens the file to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn't overwrite the previously written file. It creates a new file if no file exists. The file pointer exists at the beginning of the file.
+8	wb+	It opens the file to write and read both in binary format. The file pointer exists at the beginning of the file.
+9	a	It opens the file in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name.
+10	ab	It opens the file in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name.
+11	a+	It opens a file to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name.
+12	ab+	It opens a file to append and read both in binary format. The file pointer remains at the end of the file.
+
+Methods------------------------
+Python File Methods
+There are various methods available with the file object. Some of them have been used in the above examples.
+
+Here is the complete list of methods in text mode with a brief description:
+
+Method                  	    Description
+--------------------------------------------------
+close()                 	    Closes an opened file. It has no effect if the file is already closed.
+detach()                    	Separates the underlying binary buffer from the TextIOBase and returns it.
+fileno()                    	Returns an integer number (file descriptor) of the file.
+flush()                 	    Flushes the write buffer of the file stream.
+isatty()                    	Returns True if the file stream is interactive.
+read(n)                 	    Reads at most n characters from the file. Reads till end of file if it is negative or None.
+readable()                  	Returns True if the file stream can be read from.
+readline(n=-1)                  Reads and returns one line from the file. Reads in at most n bytes if specified.
+readlines(n=-1)                 Reads and returns a list of lines from the file. Reads in at most n bytes/characters if specified.
+seek(offset,from=SEEK_SET)	    Changes the file position to offset bytes, in reference to from (start, current, end).
+seekable()                  	Returns True if the file stream supports random access.
+tell()                  	    Returns the current file location.
+truncate(size=None)           	Resizes the file stream to size bytes. If size is not specified, resizes to current location.
+writable()                  	Returns True if the file stream can be written to.
+write(s)                    	Writes the string s to the file and returns the number of characters written.
+writelines(lines)             	Writes a list of lines to the file.
+---------------------------------------------------------
+
+
+
+ 
+
+ Read file through for loop
+We can read the file using for loop. Consider the following example.
+
+#open the file.txt in read mode. causes an error if no such file exists.    
+fileptr = open("file2.txt","r");     
+#running a for loop     
+for i in fileptr:    
+    print(i) # i contains each line of the file     
+
+---------------------------------------------------------------------------------------------------------
+Creating a new file
+The new file can be created by using one of the following access modes with the function open().
+
+x: it creates a new file with the specified name. It causes an error a file exists with the same name.
+
+a: It creates a new file with the specified name if no such file exists. It appends the content to the file if the file already exists with the specified name.
+
+w: It creates a new file with the specified name if no such file exists. It overwrites the existing file.
+
+Consider the following example.
+
+Example 1
+#open the file.txt in read mode. causes error if no such file exists.    
+fileptr = open("file2.txt","x")   
+print(fileptr)    
+if fileptr:    
+    print("File created successfully")  
+
+---------------------------------------------------------------------------------------------------------
+
+File Pointer positions
+Python provides the tell() method which is used to print the byte number at which the file pointer currently exists. Consider the following example.
+
+# open the file file2.txt in read mode    
+fileptr = open("file2.txt","r")    
+  
+#initially the filepointer is at 0     
+print("The filepointer is at byte :",fileptr.tell())    
+    
+#reading the content of the file    
+content = fileptr.read();    
+    
+#after the read operation file pointer modifies. tell() returns the location of the fileptr.     
+    
+print("After reading, the filepointer is at:",fileptr.tell())    
+Output:
+
+The filepointer is at byte : 0
+After reading, the filepointer is at: 117
+
+---------------------------------------------------------------------------------------------------------
+Modifying file pointer position
+In real-world applications, sometimes we need to change the file pointer location externally since we may need to read or write the content at various locations.
+
+For this purpose, the Python provides us the seek() method which enables us to modify the file pointer position externally.
+
+The syntax to use the seek() method is given below.
+
+Syntax:
+
+<file-ptr>.seek(offset[, from)    
+The seek() method accepts two parameters:
+
+offset: It refers to the new position of the file pointer within the file.
+
+from: It indicates the reference position from where the bytes are to be moved. If it is set to 0, the beginning of the file is used as the reference position. If it is set to 1, the current position of the file pointer is used as the reference position. If it is set to 2, the end of the file pointer is used as the reference position.
+
+Consider the following example.
+
+Example
+# open the file file2.txt in read mode    
+fileptr = open("file2.txt","r")    
+    
+#initially the filepointer is at 0     
+print("The filepointer is at byte :",fileptr.tell())    
+    
+#changing the file pointer location to 10.    
+fileptr.seek(10);    
+    
+#tell() returns the location of the fileptr.     
+print("After reading, the filepointer is at:",fileptr.tell())    
+Output:
+
+The filepointer is at byte : 0
+After reading, the filepointer is at: 10
+---------------------------------------------------------------------------------------------------------
+
