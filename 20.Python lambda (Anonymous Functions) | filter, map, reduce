@@ -1,0 +1,149 @@
+"""As we have studied function in the previous lecture, we know that if a program has a large piece of code that is required to be executed repeatedly, then it will be better to implement that piece of code as a function. Functions improve code reusability, modularity, and integrity.
+
+In this tutorial, we will see how to declare Anonymous functions and how to return values from them.
+
+As we have studied in the previous lecture, the syntax for function declaration is as follows:
+
+def function_name ():
+What is Anonymous function?
+In Python programming, an anonymous function or lambda expression is a function definition that is not bound to an identifier (def).
+
+The anonymous function is an inline function. The anonymous functions are created using a lambda operator and cannot contain multiple expressions.
+
+ The following example will show how anonymous functions work: 
+
+result = lambda n1, n2, n3: n1 + n2 + n3;
+print ("Sum of three values : ", result( 10, 20, 25 ))
+In the above code, we have created an anonymous function that adds three numbers. The function is stored in a variable named result. The function can then be called using this variable. In the above code, the function has been called with three different parameter values for the function call.
+
+Anonymous functions can accept inputs and return the outputs, just like other functions do.
+
+Why use Python Lambda Functions?
+The main objective of anonymous functions is that, when we need a function just once, anonymous functions come in handy. Lambda operator is not only used to create anonymous functions, but there are many other uses of the lambda expression. We can create anonymous functions wherever they are needed. Due to this reason, Python Lambda Functions are also called as throw-away functions which are used along with other predefined functions such as reduce(), filter() and map(). 
+
+These functions help reduce the number of lines of the code when compared to named Python functions.
+
+Significant Differences Between Lambda Expressions And Simple Functions.
+Can be passed immediately with or without variables.
+They are inline functions.
+Automatic return of results.
+There is neither a document string nor a name.
+Python List sort():
+Sorting means arranging data systematically. If the data we want to work with is not sorted, we will face problems finding the desired element.
+
+The Python language, like other programming languages, can sort data.
+
+Python has an in-build method i.e. sort(), which is used to sort the elements of the given list in a specified ascending or descending order. There is also a built-in function i.e. sorted(), that builds a new sorted list from an iterable (list, dictionary, etc.).
+
+The syntax of the sort() method is:
+
+list.sort(key=myFunc ,reverse=True|False)
+Parameter Values:-
+Parameters
+
+Values
+
+key
+
+In the key parameter, we specify a function that is called on each list element before making comparisons. 
+
+reverse
+
+This is optional. False will sort the list in ascending order, and true will sort the list in descending order.
+
+Default is reverse=False.
+
+ 
+
+Sort() does not return any value, but it changes from the original list.
+
+ 
+
+Code file as described in the video
+# Lambda functions or anonymous functions
+# def add(a, b):
+#     return a+b
+#
+# # minus = lambda x, y: x-y
+#
+# def minus(x, y):
+#     return x-y
+#
+# print(minus(9, 4))
+
+
+a =[[1, 14], [5, 6], [8,23]]
+a.sort(key=lambda x:x[1])
+print(a)
+  """
+  
+  
+  -----------------------------------------------------------------------------------------------------------------------------------
+  Example of filter() with lambda function
+The filter() function accepts two arguments: a function and a list.
+
+The filter() function returns a new list with all those elements of the input list that meet the function condition or in other words filter() returns those elements for which the function evaluates to true.
+
+Here we are using filter() with a lambda function to filter out the odd numbers from a given list of numbers.
+
+# Program to filter out odd numbers from a given list
+
+lis = [10, 3, 2, 11, 13, 14, 15]
+
+lis_new = list(filter(lambda num: (num%2 != 0) , lis))
+
+# Output: [3, 11, 13, 15]
+print(lis_new)
+------code2
+# Python code to illustrate 
+# filter() with lambda() 
+li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61] 
+final_list = list(filter(lambda x: (x%2 != 0) , li)) 
+print(final_list) 
+
+Output:
+
+[5, 7, 97, 77, 23, 73, 61]
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Example of map() with lambda function
+--------------------------------------
+Similar to filter() function, the map() function takes a function and a list as arguments.
+
+The map() function returns a new list with the items that are returned by the function for each of the elements of input list.
+
+Here we are using map() and a lambda function to return the square of each element of the given list.
+
+# Program to find out the square of each element of the list
+
+lis = [10, 9, 1, 2, 7, 11]
+
+lis_new = list(map(lambda num: num * num , lis))
+
+# Output: [100, 81, 1, 4, 49, 121]
+print(lis_new)
+------code2
+# Python code to illustrate 
+# map() with lambda() 
+# to get double of a list. 
+li = [5, 7, 22, 97, 54, 62, 77, 23, 73, 61] 
+final_list = list(map(lambda x: x*2 , li)) 
+print(final_list) 
+--
+Output:
+
+[10, 14, 44, 194, 108, 124, 154, 46, 146, 122]
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Use of lambda() with reduce()
+
+The reduce() function in Python takes in a function and a list as argument. The function is called with a lambda function and a list and a new reduced result is returned.
+This performs a repetitive operation over the pairs of the list. This is a part of functools module. 
+Example:
+# Python code to illustrate 
+# reduce() with lambda() 
+# to get sum of a list 
+from functools import reduce
+li = [5, 8, 10, 20, 50, 100] 
+sum = reduce((lambda x, y: x + y), li) 
+print (sum) 
+
+outpue-93
